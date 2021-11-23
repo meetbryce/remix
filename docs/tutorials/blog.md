@@ -9,7 +9,7 @@ We're going to be short on words and quick on code in this quickstart. If you're
 
 <docs-info>💿 Hey I'm Derrick the Remix Compact Disk 👋 Whenever you're supposed to _do_ something you'll see me</docs-info>
 
-This uses TypeScript, but we always pepper the types on after we write the code. This isn't our normal workflow, but some of you aren't using TypeScript so we didn't want to clutter up the code for you. Normally we create the type as we write the code so that we get it right the first time (measure twice, but once!).
+This uses TypeScript, but we always pepper the types on after we write the code. This isn't our normal workflow, but some of you aren't using TypeScript so we didn't want to clutter up the code for you. Normally we create the type as we write the code so that we get it right the first time (measure twice, cut once!).
 
 ## Creating the project
 
@@ -501,14 +501,7 @@ Let's use the same markdown parser for our blog here that we actually use on thi
 npm add @ryanflorence/md
 ```
 
-```tsx filename=app/post.ts lines=[5,11,18,19]
-import path from "path";
-import fs from "fs/promises";
-import parseFrontMatter from "front-matter";
-import invariant from "tiny-invariant";
-import { processMarkdown } from "@ryanflorence/md";
-
-//...
+```tsx filename=app/post.ts lines=[4,11,12]
 export async function getPost(slug: string) {
   let filepath = path.join(postsPath, slug + ".md");
   let file = await fs.readFile(filepath);
